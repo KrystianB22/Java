@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLDocumentController">
+    <children>
+        <HBox layoutX="38.0" layoutY="42.0" />
+        <Label layoutX="24.0" layoutY="25.0" prefHeight="45.0" prefWidth="373.0" text="Walidacja danych :) " textAlignment="CENTER" textFill="#66a10e" textOverrun="CENTER_WORD_ELLIPSIS">
+            <font>
+                <Font name="System Bold Italic" size="35.0" />
+            </font>
+        </Label>
+        <VBox layoutX="38.0" layoutY="119.0" prefHeight="152.0" prefWidth="192.0">
+            <children>
+                <TextField fx:id="imie" promptText="Imie" />
+                <TextField fx:id="kod" promptText="kod" />
+                <TextField fx:id="email" promptText="email" />
+            <TextField fx:id="zarobki" promptText="zarobki" />
+                <TextArea fx:id="wazne" prefHeight="54.0" prefWidth="192.0" promptText="Ważne" />
+            </children>
+        </VBox>
+        <HBox layoutX="141.0" layoutY="336.0" prefHeight="34.0" prefWidth="72.0" />
+        <Button fx:id="zapisz" layoutX="115.0" layoutY="336.0" mnemonicParsing="false" onAction="#Button_Wyslij_Action" prefHeight="75.0" prefWidth="125.0" stylesheets="@style_button.css" text="ZAPISZ" />
+        <TableView fx:id="table_view" layoutX="246.0" layoutY="91.0" prefHeight="190.0" prefWidth="451.0">
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="67.0" text="id" />
+                <TableColumn fx:id="col_imie" prefWidth="83.0" text="imie" />
+                <TableColumn fx:id="col_kod" prefWidth="75.0" text="kod" />
+                <TableColumn fx:id="col_email" prefWidth="75.0" text="email" />
+            <TableColumn fx:id="col_wazne" prefWidth="75.0" text="Costam" />
+            <TableColumn fx:id="col_zarobki" prefWidth="75.0" text="Zarobki" />
+            </columns>
+        </TableView>
+      <ComboBox fx:id="combo_box" layoutX="517.0" layoutY="25.0" prefWidth="150.0" />
+      <Button fx:id="find_button" layoutX="552.0" layoutY="336.0" mnemonicParsing="false" onAction="#Button_Find" prefHeight="51.0" prefWidth="115.0" text="Szukaj" />
+      <TextField fx:id="find_name_textfield" layoutX="535.0" layoutY="301.0" />
+    </children>
+    <stylesheets>
+        <URL value="@style.css" />
+        <URL value="@style.css" />
+    </stylesheets>
+</AnchorPane>
