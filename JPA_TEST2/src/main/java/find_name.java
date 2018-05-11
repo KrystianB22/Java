@@ -22,7 +22,7 @@ public class find_name {
         entityManager1.close();
         entityManagerFactory1.close();
 
-        log.info("Querry ok !");
+        log.info("Querry ok !jk");
         return listresult;
 
 
