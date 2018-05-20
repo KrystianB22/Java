@@ -17,12 +17,11 @@ public class javafxmain extends Application {
     public void start(Stage primaryStage) throws IOException {
 
 
-
-        FXMLLoader loader =new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("fx/StackPaneWindow.fxml"));
-        AnchorPane pane =loader.load();
+        AnchorPane pane = loader.load();
 
-        Scene scene =new Scene(pane);
+        Scene scene = new Scene(pane);
         primaryStage.setScene(scene);
         primaryStage.show();
 

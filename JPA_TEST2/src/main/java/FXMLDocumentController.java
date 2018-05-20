@@ -24,13 +24,10 @@ import java.util.regex.Pattern;
 public class FXMLDocumentController {
 
 
-
     Employee employee = new Employee();
     SelectAll find_all = new SelectAll();
-    find_name find_name =new find_name();
+    find_name find_name = new find_name();
     EntityManager entityManager;
-
-
 
 
     @FXML
@@ -46,7 +43,7 @@ public class FXMLDocumentController {
     @FXML
     private javafx.scene.control.TextField find_name_textfield;
     @FXML
-    private  javafx.scene.control.ComboBox combo_box;
+    private javafx.scene.control.ComboBox combo_box;
 
     public TextField getFind_name_textfield() {
 
@@ -56,62 +53,65 @@ public class FXMLDocumentController {
     @FXML
     private TableView<Person> table_view;
     @FXML
-    private TableColumn<Person,String> col_imie;
+    private TableColumn<Person, String> col_imie;
     @FXML
-    private TableColumn<Person,Long> col_id;
+    private TableColumn<Person, Long> col_id;
     @FXML
-    private TableColumn<Person,String> col_email;
+    private TableColumn<Person, String> col_email;
     @FXML
-    private  TableColumn<Person,String> col_wazne;
+    private TableColumn<Person, String> col_wazne;
     @FXML
-    private  TableColumn<Person,String> col_kod;
+    private TableColumn<Person, String> col_kod;
     @FXML
-    private TableColumn<Person,String> col_zarobki;
+    private TableColumn<Person, String> col_zarobki;
 
     @FXML
     public void Button_Wyslij_Action() {
         if (check_in()) { // sprawdza poprawnosc danych
             save();
-           show_table_all_employee();
-            } else {
-           System.out.println("bład");
+            show_table_all_employee();
+        } else {
+            System.out.println("bład");
         }
     }
+
     @FXML
-    public void Button_Find(){
+    public void Button_Find() {
         wys_name();
     }
+
     public void wys_name() {
-        ObservableList<Person> observableList =FXCollections.observableArrayList();
-        col_imie.setCellValueFactory(new PropertyValueFactory<Person,String>("imie"));
-        col_id.setCellValueFactory(new PropertyValueFactory<Person,Long>("id"));
-        col_email.setCellValueFactory(new PropertyValueFactory<Person,String >("email"));
-        col_wazne.setCellValueFactory(new PropertyValueFactory<Person,String>("wazne"));
-        col_kod.setCellValueFactory(new PropertyValueFactory<Person,String>("kod"));
-        col_zarobki.setCellValueFactory(new PropertyValueFactory<Person,String>("zarobki"));
+        ObservableList<Person> observableList = FXCollections.observableArrayList();
+        col_imie.setCellValueFactory(new PropertyValueFactory<Person, String>("imie"));
+        col_id.setCellValueFactory(new PropertyValueFactory<Person, Long>("id"));
+        col_email.setCellValueFactory(new PropertyValueFactory<Person, String>("email"));
+        col_wazne.setCellValueFactory(new PropertyValueFactory<Person, String>("wazne"));
+        col_kod.setCellValueFactory(new PropertyValueFactory<Person, String>("kod"));
+        col_zarobki.setCellValueFactory(new PropertyValueFactory<Person, String>("zarobki"));
         table_view.setItems(observableList);
 
         for (Employee e : find_name.findbyname(find_name_textfield.getText())
                 ) {
-            observableList.add(new Person(e.getId(),e.getEmail(),e.getKod(),e.getName(),e.getWazne(),e.getZarobki()));
+            observableList.add(new Person(e.getId(), e.getEmail(), e.getKod(), e.getName(), e.getWazne(), e.getZarobki()));
         }
     }
+
     public void show_table_all_employee() {
 
-        ObservableList<Person> observableList =FXCollections.observableArrayList();
-        col_imie.setCellValueFactory(new PropertyValueFactory<Person,String>("imie"));
-        col_id.setCellValueFactory(new PropertyValueFactory<Person,Long>("id"));
-        col_email.setCellValueFactory(new PropertyValueFactory<Person,String >("email"));
-        col_wazne.setCellValueFactory(new PropertyValueFactory<Person,String>("wazne"));
-        col_kod.setCellValueFactory(new PropertyValueFactory<Person,String>("kod"));
-        col_zarobki.setCellValueFactory(new PropertyValueFactory<Person,String>("zarobki"));
+        ObservableList<Person> observableList = FXCollections.observableArrayList();
+        col_imie.setCellValueFactory(new PropertyValueFactory<Person, String>("imie"));
+        col_id.setCellValueFactory(new PropertyValueFactory<Person, Long>("id"));
+        col_email.setCellValueFactory(new PropertyValueFactory<Person, String>("email"));
+        col_wazne.setCellValueFactory(new PropertyValueFactory<Person, String>("wazne"));
+        col_kod.setCellValueFactory(new PropertyValueFactory<Person, String>("kod"));
+        col_zarobki.setCellValueFactory(new PropertyValueFactory<Person, String>("zarobki"));
 
         table_view.setItems(observableList);
 
         for (Employee e : find_all.select_all()
                 ) {
 
-            observableList.add(new Person(e.getId(),e.getEmail(),e.getKod(),e.getName(),e.getWazne(),e.getZarobki()));
+            observableList.add(new Person(e.getId(), e.getEmail(), e.getKod(), e.getName(), e.getWazne(), e.getZarobki()));
         }
 
     }
@@ -171,8 +171,6 @@ public class FXMLDocumentController {
 
 
     }
-
-
 
 
 }

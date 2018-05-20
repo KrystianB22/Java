@@ -3,7 +3,7 @@ import java.util.Date;
 public class Person {
 
     private Long id;
-    private  String kod;
+    private String kod;
     private String imie;
     private String email;
     private String wazne;
@@ -58,12 +58,12 @@ public class Person {
         this.wazne = wazne;
     }
 
-    public Person(Long id,String email, String kod, String imie, String wazne,String zarobki) {
+    public Person(Long id, String email, String kod, String imie, String wazne, String zarobki) {
         this.id = id;
-        this.zarobki=zarobki;
+        this.zarobki = zarobki;
         this.kod = kod;
         this.imie = imie;
-        this.email=email;
+        this.email = email;
         this.wazne = wazne;
     }
 }

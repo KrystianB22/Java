@@ -60,10 +60,10 @@ public class Employee {
     @Column(name = "Cos_tam")
     private String wazne;
 
-    @Column(name="kod",columnDefinition = "VARCHAR(20) NOT NULL")//po table przypisuje pole do tabeli
+    @Column(name = "kod", columnDefinition = "VARCHAR(20) NOT NULL")//po table przypisuje pole do tabeli
     private String kod;
 
-    @Column(name="email")
+    @Column(name = "email" )
     private String email;
 
     public String getZarobki() {
@@ -74,9 +74,8 @@ public class Employee {
         this.zarobki = zarobki;
     }
 
-    @Column(name= "zarobki")
+    @Column(name = "zarobki")
     private String zarobki;
-
 
 }
 
